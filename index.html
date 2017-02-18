@@ -85,7 +85,103 @@
 				left: 42px;
 				color: #d5d5d6;
 			}
-			
+			.nav-pannel-bk{
+				position: fixed;
+				bottom: 70px;
+				height: 135px;
+				width: 100%;
+				background: #000;
+				opacity: 0.9;
+				z-index: 10000;
+			}
+			.nav-pannel{
+				position: fixed;
+				bottom: 70px;
+				height: 135px;
+				width: 100%;
+				background: none;
+				color: #fff;
+				z-index: 10001;
+			}
+			.chlid-mod{
+				padding: 5px 10px;
+				margin: 15px;
+			}
+			.chlid-mod span{
+				display: inline-block;
+				padding-right:20px;
+				padding-left: 10px; 
+			}
+			.font-size-button{
+				background: none;
+				border: 1px #8c8c8c solid;
+				color: #fff;
+				border-radius: 16px;
+				padding: 5px 40px;
+			}
+			.chlid-mod button:nth-child(2){
+				margin-right:10px; 
+			}
+			.bk-container {
+				position: relative;
+				width: 30px;
+				height: 30px;
+				border-radius: 15px;
+				background: #fff;
+				display: inline-block;	
+				vertical-align: -14px;
+				margin-right: 5px;
+			}
+			.bk-container-current{
+				position: absolute;
+				width: 32px;
+				height: 32px;
+				border-radius: 16px;
+				border: 1px #ff7800 solid;
+				display: inline-block;
+				top: -2px;
+				left: -2px;
+			}
+			.bk-container-1 {
+				position: relative;
+				width: 30px;
+				height: 30px;
+				border-radius: 15px;
+				background: #F7EEE5;
+				display: inline-block;	
+				vertical-align: -14px;
+				margin-right: 5px;
+			}
+			.bk-container-2 {
+				position: relative;
+				width: 30px;
+				height: 30px;
+				border-radius: 15px;
+				background: #A4A4A4;
+				display: inline-block;	
+				vertical-align: -14px;
+				margin-right: 5px;
+			}
+			.bk-container-3 {
+				position: relative;
+				width: 30px;
+				height: 30px;
+				border-radius: 15px;
+				background: #CDEFCE;
+				display: inline-block;	
+				vertical-align: -14px;
+				margin-right: 5px;
+			}
+			.bk-container-4 {
+				position: relative;
+				width: 30px;
+				height: 30px;
+				border-radius: 15px;
+				background: #283548;
+				display: inline-block;	
+				vertical-align: -14px;
+				margin-right: 5px;
+			}
 		</style>
 	</head>
 	<body>
@@ -105,13 +201,16 @@
 				<p>机组人员走机组通道，别说水了……火车怎么走，我们怎么走……有时候航食会给机组换东西，经常有乘务员换油或者洗衣液，就放行李架上，后来有旅客投诉，就不让换液体了。但是如果不是带着飞行任务走员工通道，没有任务书还是得走普通通道，和旅客是一个标准的，机场安检还是特别特别认真的。</p>
 				<p>机组人员走机组通道，别说水了……火车怎么走，我们怎么走……有时候航食会给机组换东西，经常有乘务员换油或者洗衣液，就放行李架上，后来有旅客投诉，就不让换液体了。但是如果不是带着飞行任务走员工通道，没有任务书还是得走普通通道，和旅客是一个标准的，机场安检还是特别特别认真的。</p>
 			</div>
-				
 			<div class="m-button-bar">
 				<ul class="u-tab">
 					<li id="prev_button">上一章</li>
 					<li id="next_button">下一章</li>
 				</ul>
 			</div>
+			<div id="bottom-nav" class="bottom-nav">
+				
+			</div>
+			<div class="nav-pannel-bk"></div>
 			<div class="nav-pannel" id="font-container">
 				<div class="chlid-mod">
 					<span>字号</span>
@@ -120,6 +219,21 @@
 				</div>
 				<div class="chlid-mod">
 					<span>背景</span>
+					<div class="bk-container">
+						<div class="bk-container-current"></div>
+					</div>
+					<div class="bk-container-1">
+						<div class="bk-container-current"></div>
+					</div>
+					<div class="bk-container-2">
+						<div class="bk-container-current"></div>
+					</div>
+					<div class="bk-container-3">
+						<div class="bk-container-current"></div>
+					</div>
+					<div class="bk-container-4">
+						<div class="bk-container-current"></div>
+					</div>
 				</div>
 			</div>
 		</div>
