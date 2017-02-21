@@ -380,8 +380,8 @@
 			(function(){
 				var Util = (function(){
 					var prefix = 'html_reader_';//由于localSotrage是键值队类型的，这样赋值可以避免别人覆盖掉我们的值
-					var StorageGetter =function(key){
-						return localStorage.getItems(prefix + key);
+					var StorageGetter =function( key){
+						return localStorage.getItem(prefix + key);
 					}
 					var StorageSetter = function(key,val){
 						return localStorage.setItem(prefix + key,val);
@@ -399,6 +399,14 @@
 				}
 				var Win = $(window);
 				var Doc = $(document);
+				var RootContainer = $('#fiction_container')
+				var initFontSize = Util.StorageGetter('font_size');
+				initFontSize = parseInt(initFontSize);
+				if(!initFontSize){
+					initFontSize = 14;
+				}
+				RootContainer.css('font-size',initFontSize);	
+
 				function main(){
 					//todo 整个项目的入口函数
 					EventHanlder();
@@ -440,7 +448,23 @@
 					$('#nigth-button').click(function(){
 						//todo 触发背景切换的事件
 					});
+					$('#large-button').click(function(){
+						if(initFontSize > 20){
+							return;
+						}
+						initFontSize += 1;
+						RootContainer.css('font-size',initFontSize);
+						Util.StorageSetter('font_size',initFontSize);
+					});
 
+					$('#small-button').click(function(){
+						if(initFontSize < 12){
+							return;
+						}
+						initFontSize -= 1;
+						RootContainer.css('font-size',initFontSize);
+						Util.StorageSetter('font_size',initFontSize);
+					});
 					Win.scroll(function(){
 						Dom.bottom_nav.hide();
 						Dom.top_nav.hide();
